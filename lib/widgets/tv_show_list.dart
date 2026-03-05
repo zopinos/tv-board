@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tv_program_manager/constants/destinations.dart';
-import 'package:tv_program_manager/constants/navigation_ids.dart';
 import 'package:tv_program_manager/controllers/tv_show_controller.dart';
 
 class TvShowList extends StatelessWidget {
@@ -22,12 +21,10 @@ class TvShowList extends StatelessWidget {
                         icon: Icon(Icons.edit),
                         onPressed: () {
                           Get.toNamed(
-                            Destinations.homeEditShow(
+                            Destinations.showsEdit.replaceFirst(
+                              ':showId',
                               show.id,
-                              show.title,
-                              show.channel,
                             ),
-                            id: NavigationIds.home,
                           );
                         },
                       ),

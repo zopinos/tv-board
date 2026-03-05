@@ -1,7 +1,8 @@
 class Destinations {
-  static const home = '/home';
-  static const homeAddShow = '/home/add-show';
-  static String homeEditShow(String id, String title, String channel) =>
-      '/home/edit-show/$id/$title/$channel';
+  static const home = '/';
+  static const shows = '/shows';
+  static const showsAdd = '/shows/add';
+  static const showsDetail = '/shows/:showId';
+  static const showsEdit = '/shows/:showId/edit';
   static const analytics = '/analytics';
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tv_program_manager/constants/destinations.dart';
-import 'package:tv_program_manager/constants/navigation_ids.dart';
 import 'package:tv_program_manager/pages/analytics/analytics_page.dart';
-
+/* 
 class AnalyticsNavigator extends StatelessWidget {
   const AnalyticsNavigator({super.key});
 
@@ -21,3 +20,4 @@ class AnalyticsNavigator extends StatelessWidget {
     );
   }
 }
+ */

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
-import 'package:tv_program_manager/constants/navigation_ids.dart';
 import 'package:tv_program_manager/controllers/tv_show_controller.dart';
 import 'package:tv_program_manager/models/tv_show.dart';
 import 'package:tv_program_manager/utils/identification.dart';
@@ -36,7 +35,7 @@ class TvShowInput extends StatelessWidget {
 
       _formKey.currentState?.reset();
 
-      Get.back(id: NavigationIds.home);
+      Get.back();
     }
   }
 
