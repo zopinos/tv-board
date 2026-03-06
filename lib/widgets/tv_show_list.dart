@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tv_program_manager/constants/destinations.dart';
 import 'package:tv_program_manager/controllers/tv_show_controller.dart';
+import 'package:tv_program_manager/widgets/tv_show_list_element.dart';
 
 class TvShowList extends StatelessWidget {
+  TvShowList({super.key});
+
   final tvShowController = Get.find<TvShowController>();
 
   @override
@@ -11,25 +13,10 @@ class TvShowList extends StatelessWidget {
     return Obx(
       () => tvShowController.size == 0
           ? Text('No shows added yet')
-          : Column(
+          : ListView(
+              scrollDirection: Axis.vertical,
               children: tvShowController.shows
-                  .map(
-                    (show) => ListTile(
-                      title: Text(show.title),
-                      leading: Text(show.channel),
-                      trailing: IconButton(
-                        icon: Icon(Icons.edit),
-                        onPressed: () {
-                          Get.toNamed(
-                            Destinations.showsEdit.replaceFirst(
-                              ':showId',
-                              show.id,
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  )
+                  .map((show) => TvShowListElement(tvShow: show))
                   .toList(),
             ),
     );

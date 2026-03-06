@@ -8,12 +8,12 @@ import 'package:tv_program_manager/models/tv_show.dart';
 import 'package:tv_program_manager/utils/identification.dart';
 
 class TvShowInput extends StatelessWidget {
+  TvShowInput({this.showToEdit, super.key});
+
   final tvShowController = Get.find<TvShowController>();
   final lengthController = Get.find<LengthController>();
   final TvShow? showToEdit;
   static final _formKey = GlobalKey<FormBuilderState>();
-
-  TvShowInput({this.showToEdit, super.key});
 
   void _submit() {
     if (_formKey.currentState!.saveAndValidate()) {

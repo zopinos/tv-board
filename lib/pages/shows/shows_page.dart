@@ -9,19 +9,16 @@ class ShowsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
-      title: 'Shows',
-      body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () => Get.toNamed(Destinations.showsAdd),
-              child: const Icon(Icons.add),
-            ),
-            TvShowList(),
-          ],
-        ),
-      ),
-    );
+    return BasePage(title: 'Shows', body: TvShowList());
   }
 }
+
+/* Column(
+        children: [
+          ElevatedButton(
+            onPressed: () => Get.toNamed(Destinations.showsAdd),
+            child: const Icon(Icons.add),
+          ),
+          
+        ],
+      ), */

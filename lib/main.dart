@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'dart:ui';
 import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'package:tv_program_manager/constants/destinations.dart';
 import 'package:tv_program_manager/controllers/length_controller.dart';
@@ -26,6 +27,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      scrollBehavior: CustomScrollBehavior(),
       defaultTransition: Transition.noTransition,
       transitionDuration: Duration.zero,
       initialRoute: Destinations.home,
@@ -47,4 +49,12 @@ class MainApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
     );
   }
+}
+
+class CustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+  };
 }

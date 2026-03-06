@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tv_program_manager/constants/destinations.dart';
 import 'package:tv_program_manager/widgets/tv_bottom_navigation_bar.dart';
 
 class BasePage extends StatelessWidget {
@@ -13,6 +15,10 @@ class BasePage extends StatelessWidget {
       appBar: AppBar(title: Text(title)),
       body: body,
       bottomNavigationBar: TvBottomNavigationBar(),
+      floatingActionButton: ElevatedButton(
+        onPressed: () => Get.toNamed(Destinations.showsAdd),
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
