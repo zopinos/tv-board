@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tv_program_manager/tv_bottom_navigation_bar.dart';
+import 'package:tv_program_manager/widgets/tv_bottom_navigation_bar.dart';
 
 class BasePage extends StatelessWidget {
   const BasePage({required this.body, required this.title, super.key});

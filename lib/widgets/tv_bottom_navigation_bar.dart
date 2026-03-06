@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tv_program_manager/controllers/base_controller.dart';
+import 'package:tv_program_manager/controllers/navigation_controller.dart';
 
 class TvBottomNavigationBar extends StatelessWidget {
   const TvBottomNavigationBar({super.key});
@@ -9,8 +9,10 @@ class TvBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => NavigationBar(
-        selectedIndex: BaseController.to.currentIndex.value,
-        onDestinationSelected: (index) => BaseController.to.changePage(index),
+        animationDuration: Duration.zero,
+        selectedIndex: NavigationController.to.currentIndex.value,
+        onDestinationSelected: (index) =>
+            NavigationController.to.changePage(index),
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_outlined),

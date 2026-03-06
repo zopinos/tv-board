@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
-import 'package:tv_program_manager/controllers/base_controller.dart';
+import 'package:tv_program_manager/constants/destinations.dart';
+import 'package:tv_program_manager/controllers/length_controller.dart';
+import 'package:tv_program_manager/controllers/navigation_controller.dart';
 import 'package:tv_program_manager/controllers/tv_show_controller.dart';
 import 'package:tv_program_manager/pages/analytics/analytics_page.dart';
 import 'package:tv_program_manager/pages/home/home_page.dart';
@@ -12,8 +14,9 @@ import 'package:tv_program_manager/pages/shows/shows_page.dart';
 Future<void> main() async {
   await Hive.initFlutter();
   await Hive.openBox("storage");
-  Get.put(BaseController());
-  Get.lazyPut<TvShowController>(() => TvShowController());
+  Get.put(NavigationController());
+  Get.put(TvShowController());
+  Get.lazyPut<LengthController>(() => LengthController(), fenix: true);
   runApp(const MainApp());
 }
 
@@ -23,15 +26,25 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialRoute: "/",
+      defaultTransition: Transition.noTransition,
+      transitionDuration: Duration.zero,
+      initialRoute: Destinations.home,
       getPages: [
-        GetPage(name: "/", page: () => HomePage()),
-        GetPage(name: "/shows", page: () => ShowsPage()),
-        GetPage(name: "/shows/add", page: () => ShowsAddPage()),
-        //GetPage(name: "/shows/:showId", page: () => ShowDetailPage()),
-        GetPage(name: "/shows/:showId/edit", page: () => ShowEditPage()),
-        GetPage(name: "/analytics", page: () => AnalyticsPage()),
+        GetPage(name: Destinations.home, page: () => HomePage()),
+        GetPage(name: Destinations.shows, page: () => ShowsPage()),
+        GetPage(name: Destinations.showsAdd, page: () => ShowsAddPage()),
+        //GetPage(name: Destinations.showsDetail, page: () => ShowDetailPage()),
+        GetPage(name: Destinations.showsEdit, page: () => ShowEditPage()),
+        GetPage(name: Destinations.analytics, page: () => AnalyticsPage()),
       ],
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.lightBlue,
+          brightness: Brightness.dark,
+        ),
+        useMaterial3: true,
+      ),
+      themeMode: ThemeMode.dark,
     );
   }
 }

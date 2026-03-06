@@ -34,11 +34,19 @@ class TvShowController {
     _save();
   }
 
+  TvShow? getShowById(String id) {
+    try {
+      return shows.firstWhere((element) => element.id == id);
+    } catch (e) {
+      return null;
+    }
+  }
+
   void delete(TvShow show) {
     shows.remove(show);
     shows.refresh();
     _save();
   }
 
-  get size => shows.length;
+  int get size => shows.length;
 }
