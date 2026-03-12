@@ -8,9 +8,9 @@ import 'package:tv_program_manager/controllers/navigation_controller.dart';
 import 'package:tv_program_manager/controllers/tv_show_controller.dart';
 import 'package:tv_program_manager/pages/analytics/analytics_page.dart';
 import 'package:tv_program_manager/pages/home/home_page.dart';
-import 'package:tv_program_manager/pages/shows/show_edit_page.dart';
-import 'package:tv_program_manager/pages/shows/shows_add_page.dart';
-import 'package:tv_program_manager/pages/shows/shows_page.dart';
+import 'package:tv_program_manager/pages/shows/tv_show_edit_page.dart';
+import 'package:tv_program_manager/pages/shows/tv_shows_add_page.dart';
+import 'package:tv_program_manager/pages/shows/tv_shows_page.dart';
 
 Future<void> main() async {
   await Hive.initFlutter();
@@ -33,10 +33,10 @@ class MainApp extends StatelessWidget {
       initialRoute: Destinations.home,
       getPages: [
         GetPage(name: Destinations.home, page: () => HomePage()),
-        GetPage(name: Destinations.shows, page: () => ShowsPage()),
-        GetPage(name: Destinations.showsAdd, page: () => ShowsAddPage()),
+        GetPage(name: Destinations.shows, page: () => TvShowsPage()),
+        GetPage(name: Destinations.showsAdd, page: () => TvShowsAddPage()),
         //GetPage(name: Destinations.showsDetail, page: () => ShowDetailPage()),
-        GetPage(name: Destinations.showsEdit, page: () => ShowEditPage()),
+        GetPage(name: Destinations.showsEdit, page: () => TvShowEditPage()),
         GetPage(name: Destinations.analytics, page: () => AnalyticsPage()),
       ],
       theme: ThemeData(

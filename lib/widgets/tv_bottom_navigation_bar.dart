@@ -22,7 +22,7 @@ class TvBottomNavigationBar extends StatelessWidget {
           NavigationDestination(
             icon: Icon(Icons.tv_outlined),
             selectedIcon: Icon(Icons.tv, color: Colors.white),
-            label: "Shows",
+            label: "TV Shows",
           ),
           NavigationDestination(
             icon: Icon(Icons.analytics_outlined),

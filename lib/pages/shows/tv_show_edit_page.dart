@@ -4,8 +4,8 @@ import 'package:tv_program_manager/controllers/tv_show_controller.dart';
 import 'package:tv_program_manager/widgets/base_page.dart';
 import 'package:tv_program_manager/widgets/tv_show_input.dart';
 
-class ShowEditPage extends StatelessWidget {
-  const ShowEditPage({super.key});
+class TvShowEditPage extends StatelessWidget {
+  const TvShowEditPage({super.key});
 
   @override
   Widget build(BuildContext context) {

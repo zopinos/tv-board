@@ -16,6 +16,7 @@ class TvShowController {
       shows.value = (storedShows as List)
           .map((show) => TvShow.fromJson(show))
           .toList();
+      shows.sort((a, b) => a.startDateTime.compareTo(b.startDateTime));
     }
   }
 
@@ -25,11 +26,13 @@ class TvShowController {
 
   void add(TvShow show) {
     shows.add(show);
+    shows.sort((a, b) => a.startDateTime.compareTo(b.startDateTime));
     _save();
   }
 
   void update(TvShow show) {
     shows.firstWhere((element) => element.id == show.id).replaceWith(show);
+    shows.sort((a, b) => a.startDateTime.compareTo(b.startDateTime));
     shows.refresh();
     _save();
   }
