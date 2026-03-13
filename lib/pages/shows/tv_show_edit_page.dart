@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tv_program_manager/controllers/tv_show_controller.dart';
-import 'package:tv_program_manager/widgets/base_page_mobile.dart';
+import 'package:tv_program_manager/widgets/base_page.dart';
 import 'package:tv_program_manager/widgets/tv_show_input.dart';
 
 class TvShowEditPage extends StatelessWidget {
@@ -11,7 +11,7 @@ class TvShowEditPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final showId = Get.parameters["showId"] ?? "";
     final showToEdit = Get.find<TvShowController>().getShowById(showId);
-    return BasePageMobile(
+    return BasePage(
       title: 'Edit TV Show',
       body: Center(child: TvShowInput(showToEdit: showToEdit)),
     );

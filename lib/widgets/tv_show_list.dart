@@ -17,7 +17,7 @@ class TvShowList extends StatelessWidget {
           : Expanded(
               child: ListView(
                 padding: EdgeInsets.symmetric(
-                  horizontal: Margins.defaultMargin,
+                  horizontal: Paddings.defaultPadding,
                 ),
                 scrollDirection: Axis.vertical,
                 children: tvShowController.shows

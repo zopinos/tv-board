@@ -14,4 +14,5 @@ class Margins {
 
 class Paddings {
   static double defaultPadding = 16;
+  static double largePadding = 24;
 }

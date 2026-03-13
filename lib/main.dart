@@ -35,7 +35,6 @@ class MainApp extends StatelessWidget {
         GetPage(name: Destinations.home, page: () => HomePage()),
         GetPage(name: Destinations.shows, page: () => TvShowsPage()),
         GetPage(name: Destinations.showsAdd, page: () => TvShowsAddPage()),
-        //GetPage(name: Destinations.showsDetail, page: () => ShowDetailPage()),
         GetPage(name: Destinations.showsEdit, page: () => TvShowEditPage()),
         GetPage(name: Destinations.analytics, page: () => AnalyticsPage()),
       ],

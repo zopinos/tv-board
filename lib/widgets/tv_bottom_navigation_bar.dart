@@ -9,6 +9,7 @@ class TvBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => NavigationBar(
+        elevation: 0,
         animationDuration: Duration.zero,
         selectedIndex: NavigationController.to.currentIndex.value,
         onDestinationSelected: (index) =>
