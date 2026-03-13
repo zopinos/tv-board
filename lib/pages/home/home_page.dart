@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:tv_program_manager/widgets/base_page.dart';
+import 'package:tv_program_manager/widgets/base_page_mobile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
+    return BasePageMobile(
       title: 'Home',
       body: Center(
-        child: Column(children: [Text("Home Page"), Text("Another Text")]),
+        child: Column(children: [Text("Next up"), Text("Compact analytics")]),
       ),
     );
   }

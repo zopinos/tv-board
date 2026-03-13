@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:tv_program_manager/constants/destinations.dart';
 import 'package:tv_program_manager/styling/sizes.dart';
 import 'package:tv_program_manager/widgets/tv_bottom_navigation_bar.dart';
 
-class BasePage extends StatelessWidget {
-  const BasePage({required this.body, required this.title, super.key});
+class BasePageMobile extends StatelessWidget {
+  const BasePageMobile({required this.body, required this.title, super.key});
 
   final Widget body;
   final String title;

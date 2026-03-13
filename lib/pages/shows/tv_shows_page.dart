@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:tv_program_manager/constants/destinations.dart';
 import 'package:tv_program_manager/styling/sizes.dart';
 import 'package:tv_program_manager/styling/typography.dart';
-import 'package:tv_program_manager/widgets/base_page.dart';
+import 'package:tv_program_manager/widgets/base_page_mobile.dart';
 import 'package:tv_program_manager/widgets/tv_show_list.dart';
 
 class TvShowsPage extends StatelessWidget {
@@ -11,7 +11,7 @@ class TvShowsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
+    return BasePageMobile(
       title: 'TV Shows',
       body: Column(
         children: [

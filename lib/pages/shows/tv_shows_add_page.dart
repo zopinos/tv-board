@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tv_program_manager/widgets/base_page.dart';
+import 'package:tv_program_manager/widgets/base_page_mobile.dart';
 import 'package:tv_program_manager/widgets/tv_show_input.dart';
 
 class TvShowsAddPage extends StatelessWidget {
@@ -7,7 +7,7 @@ class TvShowsAddPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
+    return BasePageMobile(
       title: 'Add TV Show',
       body: Center(child: TvShowInput()),
     );
