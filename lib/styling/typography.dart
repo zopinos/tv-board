@@ -1,5 +1,6 @@
 class FontSizes {
-  static double base = 16;
-  static double sm = 12;
-  static double lg = 24;
+  static const double base = 16;
+  static const double sm = 12;
+  static const double lg = 24;
+  static const double xl = 32;
 }

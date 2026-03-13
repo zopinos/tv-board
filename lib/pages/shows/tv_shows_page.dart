@@ -36,7 +36,7 @@ class TvShowsPage extends StatelessWidget {
                     child: Text(
                       "TV Shows",
                       style: TextStyle(
-                        fontSize: FontSizes.lg,
+                        fontSize: FontSizes.xl,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

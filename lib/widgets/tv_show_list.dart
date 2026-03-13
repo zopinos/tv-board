@@ -20,7 +20,7 @@ class TvShowList extends StatelessWidget {
                   horizontal: Paddings.defaultPadding,
                 ),
                 scrollDirection: Axis.vertical,
-                children: tvShowController.shows
+                children: tvShowController.tvShows
                     .map((show) => TvShowListElement(tvShow: show))
                     .toList(),
               ),

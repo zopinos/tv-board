@@ -26,17 +26,15 @@ class TvShowListElement extends StatelessWidget {
           child: ListTile(
             mouseCursor: SystemMouseCursors.click,
             leading: Text(
-              "${dateFormatter.format(tvShow.startDateTime)}\n${timeFormatter.format(tvShow.startDateTime)} - ${timeFormatter.format(tvShow.endDateTime)}    ${tvShow.endDateTime.difference(tvShow.startDateTime).inMinutes} min",
+              "${tvShowDate(tvShow)}\n${tvShowTime(tvShow)}  (${tvShowLength(tvShow)})",
             ),
-            title: Text(tvShow.title),
-            subtitle: Row(
-              children: [
-                Icon(Icons.tv, color: Colors.white70),
-                Container(
-                  margin: EdgeInsets.only(left: Margins.compactMargin),
-                  child: Text(tvShow.channel),
-                ),
-              ],
+            title: Container(
+              margin: EdgeInsets.only(left: Margins.compactMargin),
+              child: Text(tvShow.title),
+            ),
+            subtitle: Container(
+              margin: EdgeInsets.only(left: Margins.compactMargin),
+              child: Text("Channel: ${tvShow.channel}"),
             ),
             titleTextStyle: TextStyle(
               fontSize: FontSizes.lg,

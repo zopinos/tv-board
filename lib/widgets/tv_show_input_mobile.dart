@@ -21,7 +21,8 @@ class TvShowInputMobile extends StatelessWidget {
       DateTime startDate =
           _formKey.currentState!.value['startDate'] ?? DateTime.now();
       DateTime startTime =
-          _formKey.currentState!.value['startTime'] ?? DateTime.now();
+          _formKey.currentState!.value['startTime'] ??
+          DateTime.now().add(Duration(hours: 1));
       DateTime startDateTime = DateTime(
         startDate.year,
         startDate.month,
@@ -75,7 +76,8 @@ class TvShowInputMobile extends StatelessWidget {
         'show': showToEdit?.title ?? '',
         'channel': showToEdit?.channel ?? '',
         'startDate': showToEdit?.startDateTime ?? DateTime.now(),
-        'startTime': showToEdit?.startDateTime ?? DateTime.now(),
+        'startTime':
+            showToEdit?.startDateTime ?? DateTime.now().add(Duration(hours: 1)),
         'length':
             showToEdit?.endDateTime
                 .difference(showToEdit!.startDateTime)
