@@ -13,24 +13,28 @@ class AnalyticsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return BasePage(
       title: 'Analytics',
       body: Center(
         child: Column(
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Container(
-                margin: EdgeInsets.all(Margins.defaultMargin),
-                child: const Text(
-                  "Analytics",
-                  style: TextStyle(
-                    fontSize: FontSizes.xl,
-                    fontWeight: FontWeight.bold,
+            screenSize.width < Breakpoints.tablet
+                ? Container()
+                : Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      margin: EdgeInsets.all(Margins.defaultMargin),
+                      child: Text(
+                        "Analytics",
+                        style: TextStyle(
+                          fontSize: FontSizes.xl,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ),
             Text(
               'Total length of saved TV shows: ${tvShowController.getTotalLength().toString()} mins',
             ),
