@@ -1,6 +1,7 @@
 import 'package:tv_program_manager/models/tv_show.dart';
 import 'package:get/get.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
+import 'package:collection/collection.dart';
 
 class TvShowController {
   final storage = Hive.box("storage");
@@ -75,4 +76,53 @@ class TvShowController {
   }
 
   int get size => tvShows.length;
+
+  int getTotalLength() {
+    return tvShows
+        .map(
+          (tvShow) =>
+              tvShow.endDateTime.difference(tvShow.startDateTime).inMinutes,
+        )
+        .sum;
+  }
+
+  double averageLengthOfTvShows() {
+    if (tvShows.isEmpty) {
+      return 0;
+    }
+    return getTotalLength() / tvShows.length;
+  }
+
+  DateTime? earliestStartTime() {
+    if (tvShows.isEmpty) return null;
+    TvShow? earliestTvShow = minBy(tvShows, (tvShow) => tvShow.startDateTime);
+    return earliestTvShow!.startDateTime;
+  }
+
+  DateTime? latestStartTime() {
+    if (tvShows.isEmpty) return null;
+    TvShow? earliestTvShow = maxBy(tvShows, (tvShow) => tvShow.startDateTime);
+    return earliestTvShow!.startDateTime;
+  }
+
+  String getFavouriteChannel() {
+    if (tvShows.isEmpty) return "none";
+
+    var channelCounts = {};
+
+    for (var tvShow in tvShows) {
+      if (!channelCounts.containsKey(tvShow.channel)) {
+        channelCounts[tvShow.channel] = 1;
+      } else {
+        channelCounts[tvShow.channel] += 1;
+      }
+    }
+
+    var list = channelCounts.entries
+        .map((channel) => [channel.key, channel.value])
+        .toList();
+    list.sort((a, b) => b[1].compareTo(a[1]));
+
+    return list[0][0];
+  }
 }

@@ -120,7 +120,7 @@ class TvShowInputDesktop extends StatelessWidget {
             child: FormBuilderTextField(
               name: 'channel',
               decoration: InputDecoration(
-                hintText: 'Channel number',
+                hintText: 'Channel',
                 border: OutlineInputBorder(),
               ),
               autovalidateMode: AutovalidateMode.always,

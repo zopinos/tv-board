@@ -8,6 +8,10 @@ String tvShowDate(TvShow tvShow) {
   return dateFormatter.format(tvShow.startDateTime);
 }
 
+String formatDateTime(DateTime dateTime) {
+  return "${dateFormatter.format(dateTime)} ${timeFormatter.format(dateTime)}";
+}
+
 String tvShowTime(TvShow tvShow) {
   return "${timeFormatter.format(tvShow.startDateTime)} - ${timeFormatter.format(tvShow.endDateTime)}";
 }
